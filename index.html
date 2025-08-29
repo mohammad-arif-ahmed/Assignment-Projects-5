@@ -148,12 +148,12 @@
         historyList.appendChild(newHistoryItem);
     }
 
-    // Git Commit: Added function to clear the call history
+    
     function clearHistory() {
         historyList.innerHTML = "";
     }
 
-    // Git Commit: Looped through service data to dynamically generate cards and attach event listeners
+    
     services.forEach(service => {
         const card = document.createElement('div');
         card.className = "bg-white rounded-2xl shadow-lg hover:shadow-xl transition p-5 flex flex-col justify-between";
@@ -170,7 +170,7 @@
             </div>
             <div class="flex gap-3 mt-4">
                 <button class="copy-btn btn-outline rounded-xl px-4 py-2 flex-1 flex justify-center items-center gap-1">
-                    <img src="images/copy.png" alt="Copy Icon" class="nav-icon">
+                    <img src="Multimedia_(50).png" alt="Copy Icon" class="nav-icon">
                     Copy
                 </button>
                 <button class="call-btn btn-green rounded-xl px-4 py-2 flex-1 flex justify-center items-center gap-1">📞 Call</button>
@@ -192,6 +192,7 @@
 
         cardsContainer.appendChild(card);
     });
+
     </script>
 </body>
 </html>
