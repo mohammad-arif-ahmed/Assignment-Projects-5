@@ -97,7 +97,7 @@
     </div>
 </main>
 <script>
-    // Git Commit: Defined the emergency services data array
+    
     const services = [
       { name: "National Emergency", eng: "National Emergency", number: "999", badge: "All", icon: "images/emergency.png" },
       { name: "Police Helpline Number", eng: "Police", number: "999", badge: "Police", icon: "images/police.png" },
@@ -116,6 +116,10 @@
     const heartCountEl = document.getElementById("heartCount");
     const coinCountEl = document.getElementById("coinCount");
     const copyCountEl = document.getElementById("copyCount");
+    function updateCopyCount() {
+        copyCount++;
+        copyCountEl.innerText = copyCount;
+    }
 
     </script>
 </body>
