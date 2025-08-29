@@ -124,7 +124,31 @@
         heartCount++;
         heartCountEl.innerText = heartCount;
     }
+    function makeCall(serviceName, number) {
+        if (coinCount < 20) {
+            alert("Not enough coins to make a call!");
+            return;
+        }
 
+        coinCount -= 20;
+        coinCountEl.innerText = coinCount;
+
+        const callTime = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+        alert(`Calling ${serviceName} (${number})`);
+
+        const newHistoryItem = document.createElement("li");
+        newHistoryItem.className = "flex justify-between items-center bg-[#F1F1F1] p-4 rounded-xl";
+        newHistoryItem.innerHTML = `
+            <div>
+                <span class="block font-semibold text-black">${serviceName}</span>
+                <span class="block text-gray-500">${number}</span>
+            </div>
+            <span class="text-xs text-gray-500">${callTime}</span>
+        `;
+        historyList.appendChild(newHistoryItem);
+    }
+
+    
     </script>
 </body>
 </html>
