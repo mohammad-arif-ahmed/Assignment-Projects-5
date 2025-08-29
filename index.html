@@ -148,7 +148,50 @@
         historyList.appendChild(newHistoryItem);
     }
 
-    
+    // Git Commit: Added function to clear the call history
+    function clearHistory() {
+        historyList.innerHTML = "";
+    }
+
+    // Git Commit: Looped through service data to dynamically generate cards and attach event listeners
+    services.forEach(service => {
+        const card = document.createElement('div');
+        card.className = "bg-white rounded-2xl shadow-lg hover:shadow-xl transition p-5 flex flex-col justify-between";
+        card.innerHTML = `
+            <div class="flex justify-between items-start">
+                <img src="${service.icon}" class="w-10 h-10" alt="${service.name} icon">
+                <button class="heart-btn text-2xl">🤍</button>
+            </div>
+            <h3 class="font-semibold text-lg mt-3">${service.name}</h3>
+            <p class="text-gray-500">${service.eng}</p>
+            <p class="text-2xl font-bold mt-2">${service.number}</p>
+            <div class="mt-1">
+                <span class="badge-style text-xs rounded px-2 py-1">${service.badge}</span>
+            </div>
+            <div class="flex gap-3 mt-4">
+                <button class="copy-btn btn-outline rounded-xl px-4 py-2 flex-1 flex justify-center items-center gap-1">
+                    <img src="images/copy.png" alt="Copy Icon" class="nav-icon">
+                    Copy
+                </button>
+                <button class="call-btn btn-green rounded-xl px-4 py-2 flex-1 flex justify-center items-center gap-1">📞 Call</button>
+            </div>
+        `;
+
+        card.querySelector('.heart-btn').addEventListener('click', updateHeartCount);
+
+        card.querySelector('.copy-btn').addEventListener('click', () => {
+            navigator.clipboard.writeText(service.number).then(() => {
+                alert(`'${service.name}'s number, ${service.number}, has been copied!`);
+                updateCopyCount();
+            });
+        });
+
+        card.querySelector('.call-btn').addEventListener('click', () => {
+            makeCall(service.name, service.number);
+        });
+
+        cardsContainer.appendChild(card);
+    });
     </script>
 </body>
 </html>
