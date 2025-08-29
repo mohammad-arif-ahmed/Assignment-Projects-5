@@ -32,14 +32,14 @@
             gap: 4px;
         }
         .nav-icon {
-            width: 23.25px; /* Heart and Coin icons size */
+            width: 23.25px; 
             height: 23.25px;
         }
         .call-history-title-icon {
-            width: 24px; /* Call History icon size */
+            width: 24px; 
             height: 24px;
         }
-        /* Mobile responsive adjustments */
+        
         @media (max-width: 640px) {
             .nav-mobile-flex-wrap {
                 flex-wrap: wrap;
@@ -47,7 +47,7 @@
                 gap: 1rem;
             }
             .nav-item-bg {
-                padding: 4px 8px; /* Reduce horizontal padding */
+                padding: 4px 8px; 
             }
         }
     </style>
@@ -96,7 +96,27 @@
         <ul id="historyList" class="text-sm text-gray-700 space-y-4 overflow-y-auto"></ul>
     </div>
 </main>
+<script>
+    // Git Commit: Defined the emergency services data array
+    const services = [
+      { name: "National Emergency", eng: "National Emergency", number: "999", badge: "All", icon: "images/emergency.png" },
+      { name: "Police Helpline Number", eng: "Police", number: "999", badge: "Police", icon: "images/police.png" },
+      { name: "Fire Service Number", eng: "Fire Service", number: "999", badge: "Fire", icon: "images/fire-service.png" },
+      { name: "Ambulance Service", eng: "Health", number: "1994-999999", badge: "Health", icon: "images/ambulance.png" },
+      { name: "Women & Child Helpline", eng: "Help", number: "109", badge: "Help", icon: "images/emergency.png" },
+      { name: "Anti-Corruption Helpline", eng: "Govt.", number: "106", badge: "Govt.", icon: "images/emergency.png" },
+      { name: "Electricity Helpline", eng: "Electricity", number: "16216", badge: "Electricity", icon: "images/emergency.png" },
+      { name: "Brac Helpline", eng: "NGO", number: "16445", badge: "NGO", icon: "images/brac.png" },
+      { name: "Bangladesh Railway Helpline", eng: "Travel", number: "163", badge: "Travel", icon: "images/Bangladesh-Railway.png" }
+    ];
 
-    
+    let heartCount = 0, copyCount = 0, coinCount = 100;
+    const cardsContainer = document.getElementById("cardsContainer");
+    const historyList = document.getElementById("historyList");
+    const heartCountEl = document.getElementById("heartCount");
+    const coinCountEl = document.getElementById("coinCount");
+    const copyCountEl = document.getElementById("copyCount");
+
+    </script>
 </body>
 </html>
